@@ -1,0 +1,50 @@
+﻿@model voteweb.Dal.Vote
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Vote</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PoliticalParty.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PoliticalParty.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SurveyCompany.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SurveyCompany.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.votes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.votes)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
