@@ -1,4 +1,4 @@
-namespace voteweb.Dal
+namespace voteweb
 {
     using System;
     using System.Collections.Generic;
@@ -9,20 +9,25 @@ namespace voteweb.Dal
     [Table("kipodeal_admin.Vote")]
     public partial class Vote
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int Id { get; set; }
+        public Vote()
+        {
+            VoteRemark = new HashSet<VoteRemark>();
+        }
 
         public int SurveyCompanyId { get; set; }
 
         public int PoliticalPartyId { get; set; }
 
-        [Column(TypeName = "date")]
-        public DateTime date { get; set; }
-
         public int votes { get; set; }
 
-        public virtual PoliticalParty PoliticalParty { get; set; }
+        public Guid id { get; set; }
+
+        public Guid SurveyId { get; set; }
+
+        public virtual Survey Survey { get; set; }
 
         public virtual SurveyCompany SurveyCompany { get; set; }
+
+        public virtual ICollection<VoteRemark> VoteRemark { get; set; }
     }
 }

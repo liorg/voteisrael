@@ -220,20 +220,20 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\VotesController.cs" />
-    <Compile Include="Dal\VoteRemark.cs" />
-    <Compile Include="Dal\PoliticalParty.cs" />
-    <Compile Include="Dal\SurveyCompany.cs" />
-    <Compile Include="Dal\Vote.cs" />
-    <Compile Include="Dal\VoteModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Dal\VoteModel.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Models\Survey.cs" />
+    <Compile Include="Models\SurveyCompany.cs" />
+    <Compile Include="Models\SurveyRemark.cs" />
     <Compile Include="VM\VoteViewModel.cs" />
+    <Compile Include="Models\Vote.cs" />
+    <Compile Include="Models\VoteRemark.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
@@ -374,11 +374,6 @@
     <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Votes\Create.cshtml" />
-    <Content Include="Views\Votes\Delete.cshtml" />
-    <Content Include="Views\Votes\Details.cshtml" />
-    <Content Include="Views\Votes\Edit.cshtml" />
-    <Content Include="Views\Votes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

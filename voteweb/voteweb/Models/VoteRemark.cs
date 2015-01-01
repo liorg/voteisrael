@@ -1,19 +1,21 @@
-﻿namespace voteweb.Dal
+namespace voteweb
 {
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-
+    using System.Data.Entity.Spatial;
 
     [Table("kipodeal_admin.VoteRemark")]
-    public class VoteRemark
+    public partial class VoteRemark
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public Guid voteremarkid { get; set; }
 
+        [Required]
         public string desc { get; set; }
 
+        public Guid voteid { get; set; }
 
+        public virtual Vote Vote { get; set; }
     }
 }

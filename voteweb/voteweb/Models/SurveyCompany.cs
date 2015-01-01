@@ -1,4 +1,4 @@
-namespace voteweb.Dal
+namespace voteweb
 {
     using System;
     using System.Collections.Generic;

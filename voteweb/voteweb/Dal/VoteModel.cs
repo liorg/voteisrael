@@ -1,4 +1,4 @@
-namespace voteweb.Dal
+namespace voteweb
 {
     using System;
     using System.Data.Entity;
@@ -12,20 +12,32 @@ namespace voteweb.Dal
         {
         }
 
-        public virtual DbSet<PoliticalParty> PoliticalParty { get; set; }
+        public virtual DbSet<Survey> Survey { get; set; }
         public virtual DbSet<SurveyCompany> SurveyCompany { get; set; }
+        public virtual DbSet<SurveyRemark> SurveyRemark { get; set; }
         public virtual DbSet<Vote> Vote { get; set; }
+        public virtual DbSet<VoteRemark> VoteRemark { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<PoliticalParty>()
+            modelBuilder.Entity<Survey>()
+                .HasMany(e => e.SurveyRemark)
+                .WithRequired(e => e.Survey)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Survey>()
                 .HasMany(e => e.Vote)
-                .WithRequired(e => e.PoliticalParty)
+                .WithRequired(e => e.Survey)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<SurveyCompany>()
                 .HasMany(e => e.Vote)
                 .WithRequired(e => e.SurveyCompany)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Vote>()
+                .HasMany(e => e.VoteRemark)
+                .WithRequired(e => e.Vote)
                 .WillCascadeOnDelete(false);
         }
     }
