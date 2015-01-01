@@ -7,9 +7,19 @@
     <meta name="description" content="בחירות בישראל" />
     @Styles.Render("~/bundles/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    <script src="~/Scripts/angular.min.js"></script>
+    @Scripts.Render("~/bundles/bootstrap")
+
+    <script src="~/Scripts/angular-ui/ui-bootstrap.min.js"></script>
+    <script src="~/Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
+
+
+
+    <script src="~/Scripts/Graph/ng-google-chart.js"></script>
 
 </head>
-<body>
+<body ng-app="google-chart-example">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -38,8 +48,7 @@
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+
 
     @RenderSection("scripts", required: false)
 
@@ -55,6 +64,66 @@
         ga('send', 'pageview');
 
     </script>
+    <script>
+        var ang = angular.module('google-chart-example', ['googlechart']);
 
+    </script>
+
+    <script>
+
+        ang.controller("MainCtrl", function ($scope) {
+
+            $scope.chartObject = {};
+
+            $scope.onions = [
+                { v: "Onions" },
+                { v: 3 },
+            ];
+
+            $scope.chartObject.data = {
+                "cols": [
+                    { id: "t", label: "Topping", type: "string" },
+                    { id: "s", label: "Slices", type: "number" }
+                ], "rows": [
+                    {
+                        c: [
+                           { v: "Mushrooms" },
+                           { v: 3 },
+                        ]
+                    },
+                    { c: $scope.onions },
+                    {
+                        c: [
+                           { v: "Olives" },
+                           { v: 78 }
+                        ]
+                    },
+                    {
+                        c: [
+                           { v: "Zucchini" },
+                           { v: 1 },
+                        ]
+                    },
+                    {
+                        c: [
+                           { v: "Pepperoni" },
+                           { v: 2 },
+                        ]
+                    }
+                ]
+            };
+         
+            // $routeParams.chartType ="ColumnChart";// BarChart or PieChart or ColumnChart...
+            $scope.chartObject.type = "ColumnChart";// $routeParams.chartType;
+            $scope.chartObject.options = {
+                'title': 'How Much Pizza I Ate Last Night'
+            }
+
+            $scope.chart = $scope.chartObject;
+        });
+
+
+    </script>
 </body>
+
 </html>
