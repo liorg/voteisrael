@@ -1,4 +1,4 @@
-namespace voteweb
+namespace Mal.DataModel
 {
     using System;
     using System.Collections.Generic;

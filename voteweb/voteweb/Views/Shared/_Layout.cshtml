@@ -19,7 +19,7 @@
     <script src="~/Scripts/Graph/ng-google-chart.js"></script>
 
 </head>
-<body ng-app="google-chart-example">
+<body ng-app="google-chart-example" ng-controller="MainCtrl">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -28,13 +28,35 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-            @Html.ActionLink(Resources.Resource.AppName, "Index", "Home", null, new { @class = "navbar-brand" })
+                @Html.ActionLink(Resources.Resource.AppName, "Index", "Home", null, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink(Resources.Resource.HomePage, "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" dropdown on-toggle="toggled(open)">
+                        <a href class="dropdown-toggle" role="button" dropdown-toggle>
+                            Click me for a dropdown, yo!<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li ng-repeat="choice in items">
+                                <a href>{{choice}}</a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -64,66 +86,14 @@
         ga('send', 'pageview');
 
     </script>
+
     <script>
-        var ang = angular.module('google-chart-example', ['googlechart']);
+        var ang = angular.module('google-chart-example', ['googlechart', 'ui.bootstrap']);
 
     </script>
 
-    <script>
+    <script src="~/Scripts/my/GraphLoad.js"></script>
 
-        ang.controller("MainCtrl", function ($scope) {
-
-            $scope.chartObject = {};
-
-            $scope.onions = [
-                { v: "Onions" },
-                { v: 3 },
-            ];
-
-            $scope.chartObject.data = {
-                "cols": [
-                    { id: "t", label: "Topping", type: "string" },
-                    { id: "s", label: "Slices", type: "number" }
-                ], "rows": [
-                    {
-                        c: [
-                           { v: "Mushrooms" },
-                           { v: 3 },
-                        ]
-                    },
-                    { c: $scope.onions },
-                    {
-                        c: [
-                           { v: "Olives" },
-                           { v: 78 }
-                        ]
-                    },
-                    {
-                        c: [
-                           { v: "Zucchini" },
-                           { v: 1 },
-                        ]
-                    },
-                    {
-                        c: [
-                           { v: "Pepperoni" },
-                           { v: 2 },
-                        ]
-                    }
-                ]
-            };
-         
-            // $routeParams.chartType ="ColumnChart";// BarChart or PieChart or ColumnChart...
-            $scope.chartObject.type = "ColumnChart";// $routeParams.chartType;
-            $scope.chartObject.options = {
-                'title': 'How Much Pizza I Ate Last Night'
-            }
-
-            $scope.chart = $scope.chartObject;
-        });
-
-
-    </script>
 </body>
 
 </html>

@@ -1,9 +1,10 @@
-namespace voteweb
+namespace Mal.Dal
 {
     using System;
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
+    using Mal.DataModel;
 
     public partial class VoteModel : DbContext
     {

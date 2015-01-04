@@ -47,6 +47,8 @@ namespace ASP.NET_MVC5_Bootstrap3_3_1_LESS
             bootstrapBundle.Transforms.Add(jsTransformer);
             bootstrapBundle.Orderer = nullOrderer;
             bundles.Add(bootstrapBundle);
+
+
         }
     }
 }
