@@ -8,12 +8,8 @@
     @Styles.Render("~/bundles/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
-
     @Scripts.Render("~/bundles/bootstrap")
-
     @Scripts.Render("~/bundles/angular")
-
-
 </head>
 <body ng-app="google-chart-example" ng-controller="MainCtrl">
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -28,8 +24,6 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink(Resources.Resource.HomePage, "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                    
                     <li class="dropdown" dropdown on-toggle="toggled(open)">
@@ -38,13 +32,13 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li ng-repeat="survery in Survery.AllItems">
-                                <a href="" ng-click="changeSurvery()">{{survery.Name}}</a>
+                                <a href="" ng-click="changeSurvery(survery)">{{survery.Name}}</a>
                             </li>
                         </ul>
                     </li>
                     <li class="dropdown" dropdown on-toggle="toggled(open)">
                         <a href class="dropdown-toggle" role="button" dropdown-toggle>
-                            Click me for a dropdown, yo!<span class="caret"></span>
+                           תאריך אחרון<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
                             <li ng-repeat="choice in items">
@@ -53,7 +47,7 @@
                         </ul>
                     </li>
                 </ul>
-                @Html.Partial("_LoginPartial")
+                @Html.Partial("_prefferLangPartial")
             </div>
         </div>
     </div>

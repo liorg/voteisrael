@@ -13,7 +13,7 @@ using ASP.NET_MVC5_Bootstrap3_3_1_LESS.Models;
 namespace ASP.NET_MVC5_Bootstrap3_3_1_LESS.Controllers
 {
     [Authorize]
-    public class AccountController : Controller
+    public class AccountController : voteweb.Controllers.BaseController
     {
         public AccountController()
             : this(new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext())))

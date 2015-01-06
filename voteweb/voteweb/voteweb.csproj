@@ -222,12 +222,14 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SurveyCompaniesController.cs" />
     <Compile Include="Controllers\VotesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helper\CultureHelper.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -235,15 +237,16 @@
     <Compile Include="VM\VoteViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\2.x\bootstrap.rtl.css" />
+    <Content Include="Content\css\bootstrap-rtl.css" />
+    <Content Include="Content\fontsrtl\glyphicons-halflings-regular.svg" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="favicon.ico" />
+    <Content Include="Content\fontsltr\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\bootstrap\variables.less" />
     <Content Include="Content\bootstrap\navbar.less" />
     <Content Include="Content\Site.less" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap\wells.less" />
     <Content Include="Content\bootstrap\utilities.less" />
     <Content Include="Content\bootstrap\type.less" />
@@ -312,6 +315,8 @@
     <Content Include="Content\bootstrap\bootstrap.less" />
     <Content Include="Content\bootstrap\badges.less" />
     <Content Include="Content\bootstrap\alerts.less" />
+    <Content Include="Scripts\affix.js" />
+    <Content Include="Scripts\alert.js" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular-route.js" />
     <Content Include="Scripts\angular-route.min.js" />
@@ -321,6 +326,7 @@
     <Content Include="Scripts\angular-ui\ui-bootstrap.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\bootstrap-rtl.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="BundleTransformer.Configuration.xsd">
@@ -328,8 +334,61 @@
     </None>
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="Scripts\angular-route.min.js.map" />
+    <Content Include="Content\fontsltr\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fontsltr\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fontsltr\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\RTL-Bootstrap-Less\wells.less" />
+    <Content Include="Content\RTL-Bootstrap-Less\variables.less" />
+    <Content Include="Content\RTL-Bootstrap-Less\utilities.less" />
+    <Content Include="Content\RTL-Bootstrap-Less\type.less" />
+    <Content Include="Content\RTL-Bootstrap-Less\tooltip.less" />
+    <Content Include="Content\RTL-Bootstrap-Less\thumbnails.less" />
+    <Content Include="Content\RTL-Bootstrap-Less\theme.less" />
+    <Content Include="Content\RTL-Bootstrap-Less\tables.less" />
+    <Content Include="Content\RTL-Bootstrap-Less\scaffolding.less" />
+    <Content Include="Content\RTL-Bootstrap-Less\responsive-utilities.less" />
+    <Content Include="Content\RTL-Bootstrap-Less\progress-bars.less" />
+    <Content Include="Content\RTL-Bootstrap-Less\print.less" />
+    <Content Include="Content\RTL-Bootstrap-Less\popovers.less" />
+    <Content Include="Content\RTL-Bootstrap-Less\panels.less" />
+    <Content Include="Content\RTL-Bootstrap-Less\pagination.less" />
+    <Content Include="Content\RTL-Bootstrap-Less\pager.less" />
+    <Content Include="Content\RTL-Bootstrap-Less\normalize.less" />
+    <Content Include="Content\RTL-Bootstrap-Less\navs.less" />
+    <Content Include="Content\RTL-Bootstrap-Less\navbar.less" />
+    <Content Include="Content\RTL-Bootstrap-Less\modals.less" />
+    <Content Include="Content\RTL-Bootstrap-Less\mixins.less" />
+    <Content Include="Content\RTL-Bootstrap-Less\media.less" />
+    <Content Include="Content\RTL-Bootstrap-Less\list-group.less" />
+    <Content Include="Content\RTL-Bootstrap-Less\labels.less" />
+    <Content Include="Content\RTL-Bootstrap-Less\jumbotron.less" />
+    <Content Include="Content\RTL-Bootstrap-Less\input-groups.less" />
+    <Content Include="Content\RTL-Bootstrap-Less\grid.less" />
+    <Content Include="Content\RTL-Bootstrap-Less\glyphicons.less" />
+    <Content Include="Content\RTL-Bootstrap-Less\forms.less" />
+    <Content Include="Content\RTL-Bootstrap-Less\dropdowns.less" />
+    <Content Include="Content\RTL-Bootstrap-Less\component-animations.less" />
+    <Content Include="Content\RTL-Bootstrap-Less\code.less" />
+    <Content Include="Content\RTL-Bootstrap-Less\close.less" />
+    <Content Include="Content\RTL-Bootstrap-Less\carousel.less" />
+    <Content Include="Content\RTL-Bootstrap-Less\buttons.less" />
+    <Content Include="Content\RTL-Bootstrap-Less\button-groups.less" />
+    <Content Include="Content\RTL-Bootstrap-Less\breadcrumbs.less" />
+    <Content Include="Content\RTL-Bootstrap-Less\bootstrap.less" />
+    <Content Include="Content\RTL-Bootstrap-Less\badges.less" />
+    <Content Include="Content\RTL-Bootstrap-Less\alerts.less" />
+    <Content Include="Content\fontsrtl\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fontsrtl\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fontsrtl\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
     <None Include="Properties\PublishProfiles\prod.pubxml" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Scripts\button.js" />
+    <Content Include="Scripts\carousel-rtl.js" />
+    <Content Include="Scripts\collapse.js" />
+    <Content Include="Scripts\dropdown.js" />
     <Content Include="Scripts\Graph\ng-google-chart.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />
@@ -339,12 +398,19 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\less.min.js" />
+    <Content Include="Scripts\modal.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\my\GraphLoad.js" />
+    <Content Include="Scripts\popover.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\scrollspy.js" />
+    <Content Include="Scripts\tab.js" />
+    <Content Include="Scripts\tooltip.js" />
+    <Content Include="Scripts\transition.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -379,6 +445,7 @@
     <Content Include="Views\SurveyCompanies\Details.cshtml" />
     <Content Include="Views\SurveyCompanies\Edit.cshtml" />
     <Content Include="Views\SurveyCompanies\Index.cshtml" />
+    <Content Include="Views\Shared\_prefferLangPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

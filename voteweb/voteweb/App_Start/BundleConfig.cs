@@ -20,35 +20,48 @@ namespace ASP.NET_MVC5_Bootstrap3_3_1_LESS
             cssBundle.Transforms.Add(cssTransformer);
             cssBundle.Orderer = nullOrderer;
             bundles.Add(cssBundle);
-
+            /*
+          var cssRtlBundle = new StyleBundle("~/bundles/css-rtl");
+          // cssRtlBundle.Include("~/Content/Site.less", "~/Content/RTL-Bootstrap-Less/bootstrap.less");
+          cssRtlBundle.Include("~/Content/css/2.x/bootstrap-rtl.css");
+          cssRtlBundle.Transforms.Add(cssTransformer);
+          cssRtlBundle.Orderer = nullOrderer;
+          bundles.Add(cssRtlBundle);
+            */
             var jqueryBundle = new ScriptBundle("~/bundles/jquery");
-            jqueryBundle.Include("~/Scripts/jquery-{version}.js");
-            jqueryBundle.Transforms.Add(jsTransformer);
-            jqueryBundle.Orderer = nullOrderer;
-            bundles.Add(jqueryBundle);
+          jqueryBundle.Include("~/Scripts/jquery-{version}.js");
+          jqueryBundle.Transforms.Add(jsTransformer);
+          jqueryBundle.Orderer = nullOrderer;
+          bundles.Add(jqueryBundle);
 
-            var jqueryvalBundle = new ScriptBundle("~/bundles/jqueryval");
-            jqueryvalBundle.Include("~/Scripts/jquery.validate*");
-            jqueryvalBundle.Transforms.Add(jsTransformer);
-            jqueryvalBundle.Orderer = nullOrderer;
-            bundles.Add(jqueryvalBundle);
+          var jqueryvalBundle = new ScriptBundle("~/bundles/jqueryval");
+          jqueryvalBundle.Include("~/Scripts/jquery.validate*");
+          jqueryvalBundle.Transforms.Add(jsTransformer);
+          jqueryvalBundle.Orderer = nullOrderer;
+          bundles.Add(jqueryvalBundle);
 
 
-            // Use the development version of Modernizr to develop with and learn from. Then, when you're
-            // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
+          // Use the development version of Modernizr to develop with and learn from. Then, when you're
+          // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
 
-            var modernizrBundle = new ScriptBundle("~/bundles/modernizr");
-            modernizrBundle.Include("~/Scripts/modernizr-*");
-            modernizrBundle.Transforms.Add(jsTransformer);
-            modernizrBundle.Orderer = nullOrderer;
-            bundles.Add(modernizrBundle);
+          var modernizrBundle = new ScriptBundle("~/bundles/modernizr");
+          modernizrBundle.Include("~/Scripts/modernizr-*");
+          modernizrBundle.Transforms.Add(jsTransformer);
+          modernizrBundle.Orderer = nullOrderer;
+          bundles.Add(modernizrBundle);
 
-            var bootstrapBundle = new ScriptBundle("~/bundles/bootstrap");
-            bootstrapBundle.Include("~/Scripts/bootstrap.js", "~/Scripts/respond.js");
-            bootstrapBundle.Transforms.Add(jsTransformer);
-            bootstrapBundle.Orderer = nullOrderer;
-            bundles.Add(bootstrapBundle);
-
+          var bootstrapBundle = new ScriptBundle("~/bundles/bootstrap");
+          bootstrapBundle.Include("~/Scripts/bootstrap.js", "~/Scripts/respond.js");
+          bootstrapBundle.Transforms.Add(jsTransformer);
+          bootstrapBundle.Orderer = nullOrderer;
+          bundles.Add(bootstrapBundle);
+          /*
+          var bootstrapRtlBundle = new ScriptBundle("~/bundles/bootstrap-rtl");
+          bootstrapRtlBundle.Include("~/Scripts/bootstrap-rtl.js", "~/Scripts/respond.js");
+          bootstrapRtlBundle.Transforms.Add(jsTransformer);
+          bootstrapRtlBundle.Orderer = nullOrderer;
+          bundles.Add(bootstrapRtlBundle);
+          */
             var angularBundle = new ScriptBundle("~/bundles/angular");
             angularBundle.Include("~/Scripts/angular.min.js", "~/Scripts/Graph/ng-google-chart.js", "~/Scripts/angular-ui/ui-bootstrap.min.js", "~/Scripts/angular-ui/ui-bootstrap-tpls.min.js");
             angularBundle.Transforms.Add(jsTransformer);

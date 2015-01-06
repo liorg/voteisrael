@@ -14,7 +14,7 @@ ang.controller("MainCtrl", function ($scope) {
         ]
 
     };
-    changeSurvery = function (s) 
+    $scope.changeSurvery = function (s)
     {
         alert(1);
         alert(s.Id)
