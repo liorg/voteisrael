@@ -1,5 +1,23 @@
 ﻿
 ang.controller("MainCtrl", function ($scope) {
+
+
+    $scope.Survery = {
+        Current: {
+            Id: 1,
+            Name: "דחף"
+        },
+        AllItems: [
+            { Id: 2, Name: "מינה צמח" },
+            { Id: 3, Name: "גיאוקרטוגרפיה" },
+            { Id: 4, Name: "מאגר מוחות" }
+        ]
+
+    };
+    changeSurvery = function (s) {
+        alert(s.Id)
+    };
+
     $scope.items = [
     'The first choice!',
     'And another choice for you.',

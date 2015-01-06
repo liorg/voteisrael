@@ -6,7 +6,7 @@ namespace Mal.DataModel
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("kipodeal_admin.SurveyRemark")]
+    [Table("dbo.SurveyRemark")]
     public partial class SurveyRemark
     {
         public Guid id { get; set; }

@@ -6,7 +6,7 @@ namespace Mal.DataModel
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("kipodeal_admin.Survey")]
+    [Table("dbo.Survey")]
     public partial class Survey
     {
         public Survey()

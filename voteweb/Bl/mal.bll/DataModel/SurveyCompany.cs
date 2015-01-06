@@ -6,7 +6,7 @@
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("kipodeal_admin.SurveyCompany")]
+    [Table("dbo.SurveyCompany")]
     public partial class SurveyCompany
     {
         public SurveyCompany()

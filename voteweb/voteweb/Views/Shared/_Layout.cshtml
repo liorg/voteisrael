@@ -35,16 +35,15 @@
                     <li>@Html.ActionLink(Resources.Resource.HomePage, "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">One more separated link</a></li>
+                   
+                    <li class="dropdown" dropdown on-toggle="toggled(open)">
+                        <a href class="dropdown-toggle" role="button" dropdown-toggle>
+                            {{Survery.Current.Name}}<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li ng-repeat="survery in Survery.AllItems">
+                                <a href="" ng-click="changeSurvery()">{{survery.Name}}</a>
+                            </li>
                         </ul>
                     </li>
                     <li class="dropdown" dropdown on-toggle="toggled(open)">
