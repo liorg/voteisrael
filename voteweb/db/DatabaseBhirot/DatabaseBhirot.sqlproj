@@ -71,6 +71,5 @@
     <Build Include="dbo\Tables\__MigrationHistory.sql" />
     <Build Include="dbo\Tables\VoteRemark.sql" />
     <Build Include="dbo\Tables\SurveyCompany.sql" />
-    <Build Include="Security\kipodeal_admin.sql" />
   </ItemGroup>
 </Project>
