@@ -237,7 +237,6 @@
     <Compile Include="VM\VoteViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\css\2.x\bootstrap.rtl.css" />
     <Content Include="Content\css\bootstrap-rtl.css" />
     <Content Include="Content\fontsrtl\glyphicons-halflings-regular.svg" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
