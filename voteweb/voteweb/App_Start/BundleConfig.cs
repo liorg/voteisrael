@@ -33,6 +33,7 @@ namespace ASP.NET_MVC5_Bootstrap3_3_1_LESS
             jqueryvalBundle.Orderer = nullOrderer;
             bundles.Add(jqueryvalBundle);
 
+
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
 
@@ -48,7 +49,18 @@ namespace ASP.NET_MVC5_Bootstrap3_3_1_LESS
             bootstrapBundle.Orderer = nullOrderer;
             bundles.Add(bootstrapBundle);
 
+            var angularBundle = new ScriptBundle("~/bundles/angular");
+            angularBundle.Include("~/Scripts/angular.min.js", "~/Scripts/Graph/ng-google-chart.js", "~/Scripts/angular-ui/ui-bootstrap.min.js", "~/Scripts/angular-ui/ui-bootstrap-tpls.min.js");
+            angularBundle.Transforms.Add(jsTransformer);
+            angularBundle.Orderer = nullOrderer;
+            bundles.Add(angularBundle);
 
+
+            var myBundle = new ScriptBundle("~/bundles/my");
+            myBundle.Include("~/Scripts/my/GraphLoad.js");
+            myBundle.Transforms.Add(jsTransformer);
+            myBundle.Orderer = nullOrderer;
+            bundles.Add(myBundle);
         }
     }
 }
