@@ -1,14 +1,17 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="@CultureHelper.GetCurrentNeutralCulture()" dir="@(CultureHelper.IsRighToLeft() ? "rtl" : "ltr")">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     <meta name="description" content="בחירות בישראל" />
-    @Styles.Render("~/bundles/css")
+
+    @Styles.Render("~/bundles/css" + (CultureHelper.IsRighToLeft() ? "-rtl" : ""))
     @Scripts.Render("~/bundles/modernizr")
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jquery") 
+    @Scripts.Render("~/bundles/bootstrap" + (CultureHelper.IsRighToLeft() ? "-rtl" : ""))
+  
     @Scripts.Render("~/bundles/angular")
 </head>
 <body ng-app="google-chart-example" ng-controller="MainCtrl">
@@ -25,7 +28,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                   
+
                     <li class="dropdown" dropdown on-toggle="toggled(open)">
                         <a href class="dropdown-toggle" role="button" dropdown-toggle>
                             {{Survery.Current.Name}}<span class="caret"></span>
@@ -38,7 +41,7 @@
                     </li>
                     <li class="dropdown" dropdown on-toggle="toggled(open)">
                         <a href class="dropdown-toggle" role="button" dropdown-toggle>
-                           תאריך אחרון<span class="caret"></span>
+                            תאריך אחרון<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
                             <li ng-repeat="choice in items">

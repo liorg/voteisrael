@@ -20,6 +20,13 @@ namespace ASP.NET_MVC5_Bootstrap3_3_1_LESS
             cssBundle.Transforms.Add(cssTransformer);
             cssBundle.Orderer = nullOrderer;
             bundles.Add(cssBundle);
+
+            var cssRtlBundle = new StyleBundle("~/bundles/css-rtl");
+           // cssRtlBundle.Include("~/Content/Site.less", "~/Content/RTL-Bootstrap-Less/bootstrap.less");
+            cssRtlBundle.Include("~/Content/SiteBase.css","~/Content/css/bootstrap-rtl.css");
+            cssRtlBundle.Transforms.Add(cssTransformer);
+            cssRtlBundle.Orderer = nullOrderer;
+            bundles.Add(cssRtlBundle);
             /*
           var cssRtlBundle = new StyleBundle("~/bundles/css-rtl");
           // cssRtlBundle.Include("~/Content/Site.less", "~/Content/RTL-Bootstrap-Less/bootstrap.less");
@@ -55,13 +62,13 @@ namespace ASP.NET_MVC5_Bootstrap3_3_1_LESS
           bootstrapBundle.Transforms.Add(jsTransformer);
           bootstrapBundle.Orderer = nullOrderer;
           bundles.Add(bootstrapBundle);
-          /*
+         
           var bootstrapRtlBundle = new ScriptBundle("~/bundles/bootstrap-rtl");
           bootstrapRtlBundle.Include("~/Scripts/bootstrap-rtl.js", "~/Scripts/respond.js");
           bootstrapRtlBundle.Transforms.Add(jsTransformer);
           bootstrapRtlBundle.Orderer = nullOrderer;
           bundles.Add(bootstrapRtlBundle);
-          */
+          
             var angularBundle = new ScriptBundle("~/bundles/angular");
             angularBundle.Include("~/Scripts/angular.min.js", "~/Scripts/Graph/ng-google-chart.js", "~/Scripts/angular-ui/ui-bootstrap.min.js", "~/Scripts/angular-ui/ui-bootstrap-tpls.min.js");
             angularBundle.Transforms.Add(jsTransformer);
