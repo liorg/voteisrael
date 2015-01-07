@@ -15,7 +15,7 @@ namespace ASP.NET_MVC5_Bootstrap3_3_1_LESS
             //    url: "{controller}/{action}/{id}",
             //    defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             //);
-
+            //http://afana.me/post/aspnet-mvc-internationalization.aspx
             routes.MapRoute(
                 name: "Default",
                 url: "{culture}/{controller}/{action}/{id}",

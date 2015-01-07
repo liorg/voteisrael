@@ -22,19 +22,12 @@ namespace ASP.NET_MVC5_Bootstrap3_3_1_LESS
             bundles.Add(cssBundle);
 
             var cssRtlBundle = new StyleBundle("~/bundles/css-rtl");
-           // cssRtlBundle.Include("~/Content/Site.less", "~/Content/RTL-Bootstrap-Less/bootstrap.less");
-            cssRtlBundle.Include("~/Content/SiteBase.css","~/Content/css/bootstrap-rtl.css");
+            cssRtlBundle.Include("~/Content/Site.less", "~/Content/RTL-Bootstrap-Less/bootstrap.less");
+           // cssRtlBundle.Include("~/Content/SiteBase.css","~/Content/css/bootstrap-rtl.css");
             cssRtlBundle.Transforms.Add(cssTransformer);
             cssRtlBundle.Orderer = nullOrderer;
             bundles.Add(cssRtlBundle);
-            /*
-          var cssRtlBundle = new StyleBundle("~/bundles/css-rtl");
-          // cssRtlBundle.Include("~/Content/Site.less", "~/Content/RTL-Bootstrap-Less/bootstrap.less");
-          cssRtlBundle.Include("~/Content/css/2.x/bootstrap-rtl.css");
-          cssRtlBundle.Transforms.Add(cssTransformer);
-          cssRtlBundle.Orderer = nullOrderer;
-          bundles.Add(cssRtlBundle);
-            */
+           
             var jqueryBundle = new ScriptBundle("~/bundles/jquery");
           jqueryBundle.Include("~/Scripts/jquery-{version}.js");
           jqueryBundle.Transforms.Add(jsTransformer);
