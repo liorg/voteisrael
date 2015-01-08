@@ -79,6 +79,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please ,Write comment to my email.
+        /// </summary>
+        internal static string ContactDesc {
+            get {
+                return ResourceManager.GetString("ContactDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Israeli election 2015.
         /// </summary>
         internal static string Description {
@@ -102,6 +111,24 @@ namespace Resources {
         internal static string Keywords {
             get {
                 return ResourceManager.GetString("Keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Links.
+        /// </summary>
+        internal static string Links {
+            get {
+                return ResourceManager.GetString("Links", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remarks of this survery.
+        /// </summary>
+        internal static string Remarks {
+            get {
+                return ResourceManager.GetString("Remarks", resourceCulture);
             }
         }
         

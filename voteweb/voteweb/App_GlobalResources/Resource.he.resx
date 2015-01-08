@@ -123,6 +123,9 @@
   <data name="Contact" xml:space="preserve">
     <value>צור קשר</value>
   </data>
+  <data name="ContactDesc" xml:space="preserve">
+    <value>לתגובות נא לרשום אליי </value>
+  </data>
   <data name="Description" xml:space="preserve">
     <value>סיקור כל סקרים בחירות 2015</value>
   </data>
@@ -131,6 +134,12 @@
   </data>
   <data name="Keywords" xml:space="preserve">
     <value>בחירות 2015 , סקרים</value>
+  </data>
+  <data name="Links" xml:space="preserve">
+    <value>קישורים</value>
+  </data>
+  <data name="Remarks" xml:space="preserve">
+    <value>הערות עבור סקר זה</value>
   </data>
   <data name="Support" xml:space="preserve">
     <value>תמיכה</value>

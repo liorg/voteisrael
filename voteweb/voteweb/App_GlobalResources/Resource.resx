@@ -123,6 +123,9 @@
   <data name="Contact" xml:space="preserve">
     <value>Contact</value>
   </data>
+  <data name="ContactDesc" xml:space="preserve">
+    <value>Please ,Write comment to my email</value>
+  </data>
   <data name="Description" xml:space="preserve">
     <value>Israeli election 2015</value>
   </data>
@@ -131,6 +134,12 @@
   </data>
   <data name="Keywords" xml:space="preserve">
     <value>Israeli election 2015,Israeli election,surverys</value>
+  </data>
+  <data name="Links" xml:space="preserve">
+    <value>Links</value>
+  </data>
+  <data name="Remarks" xml:space="preserve">
+    <value>Remarks of this survery</value>
   </data>
   <data name="Support" xml:space="preserve">
     <value>Support</value>
