@@ -42,11 +42,11 @@
                     </li>
                     <li class="dropdown" dropdown on-toggle="toggled(open)">
                         <a href class="dropdown-toggle" role="button" dropdown-toggle>
-                            {{Survery.Current.LastDate}}<span class="caret"></span>
+                            {{Survery.SelectedDate}}<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
                             <li ng-repeat="choiceDate in Survery.Current.OtherDates">
-                                <a href="#" ng-click="otherDatePick(choiceDate)">{{choiceDate}}</a>
+                                <a href="#" ng-click="otherDatePick(choiceDate)">{{choiceDate.DateItem.Title}}</a>
                             </li>
                         </ul>
                     </li>
