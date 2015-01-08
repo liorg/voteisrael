@@ -11,20 +11,23 @@
 </div>
 <div class="row">
     <div class="col-md-6 col-xs-12">
-        <h2>@Resources.Resource.Links</h2>
-        <p>
-            <ul>
-                <li ng-repeat="link in Survery.SelectedSurvery.Links">
-                    <a href="#">{{link.Desc}}</a>
-                </li>
-            </ul>
-        </p>
+        <p></p><p></p>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">@Resources.Resource.Links</h3>
+            </div>
+            <div class="panel-body">
+                <div class="list-group">
+                    <div class="list-group-item" ng-repeat="link in Survery.SelectedSurvery.Links">
+                        <img src="{{link.Ico}}" width="40" height="40" />   <a href="#">{{link.Desc}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
     <div class="col-md-6 col-xs-12">
-        <h2>@Resources.Resource.Remarks</h2>
-        <p></p>
-        <p>
+
     </div>
 
 </div>

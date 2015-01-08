@@ -2,7 +2,7 @@
 ang.controller("MainCtrl", function ($scope) {
     $scope.chartObject = {};
 
-    var style = "padding:0;height:400px";
+    var style = "padding:2px;height:400px";
     var logo = [
         { Name: "Maariv", Url: "http://upload.wikimedia.org/wikipedia/he/c/ce/Maariv.svg" },
         { Name: "Walla", Url: "http://upload.wikimedia.org/wikipedia/he/d/d5/Walla_logo.svg" },
@@ -74,7 +74,7 @@ ang.controller("MainCtrl", function ($scope) {
                     ,
                     Links:
                         [
-                            { Name: "הארץ", Ico: "http://upload.wikimedia.org/wikipedia/he/3/3f/Arutz_7.png", Desc: "נלקח מהארץ", Url: "" },
+                            { Name: "הארץ", Ico: "http://upload.wikimedia.org/wikipedia/he/9/92/Haaretz.svg", Desc: "נלקח מהארץ", Url: "" },
 
                             { Name: "WALLA", Ico: "http://upload.wikimedia.org/wikipedia/he/d/d5/Walla_logo.svg", Desc: "נלקח מ WALLA", Url: "" },
                            ]
@@ -110,7 +110,6 @@ ang.controller("MainCtrl", function ($scope) {
 
     $scope.otherDatePick = function (s) {
         changeChartObject(s.DateItem);
-      
         refresh();
     };
 
@@ -154,11 +153,11 @@ ang.controller("MainCtrl", function ($scope) {
             "rows": []
         };
         changeChartObject($scope.Survery.Current.LastDate);
-
+       
     }
 
     function refresh() {
-        $scope.chart = $scope.chartObject;
+        $scope.chart = $scope.chartObject; $scope.chart.cssStyle = style;
     }
 
     loadChartObject();
