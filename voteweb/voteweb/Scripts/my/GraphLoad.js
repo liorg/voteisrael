@@ -3,9 +3,25 @@ ang.controller("MainCtrl", function ($scope) {
     $scope.chartObject = {};
 
     var style = "padding:0;height:400px";
+    var logo = [
+        { Name: "Maariv", Url: "http://upload.wikimedia.org/wikipedia/he/c/ce/Maariv.svg" },
+        { Name: "Walla", Url: "http://upload.wikimedia.org/wikipedia/he/d/d5/Walla_logo.svg" },
+        { Name: "Mako", Url: "http://upload.wikimedia.org/wikipedia/he/2/2a/New_mako.png" },
+        { Name: "Arutz_7", Url: "http://upload.wikimedia.org/wikipedia/he/3/3f/Arutz_7.png" },
+        { Name: "Glz", Url: "http://upload.wikimedia.org/wikipedia/he/4/4a/Glzlogo.jpg" },
+        { Name: "Haaretz", Url: "http://upload.wikimedia.org/wikipedia/he/9/92/Haaretz.svg" },
+        { Name: "10", Url: "http://upload.wikimedia.org/wikipedia/he/2/28/%D7%9C%D7%95%D7%92%D7%95_%D7%97%D7%93%D7%A9%D7%95%D7%AA_10_%D7%94%D7%97%D7%93%D7%A9.png" },
+        { Name: "Ynet", Url: "http://upload.wikimedia.org/wikipedia/he/f/fa/YnetLogo.svg" },
+        { Name: "Bet", Url: "http://upload.wikimedia.org/wikipedia/he/3/31/ReshetBetLogo.jpg" }
+
+    ];
 
     $scope.Survery = {
-        SelectedDate: "2011-2-22",
+        SelectedSurvery:{
+            SelectedDate: "d",
+            Links:[],
+            Remarks:[]
+        },
         Current: {
             Id: '{E7BE131D-321F-4F84-A4D2-709C5C65E421}',
             Name: "דחף",
@@ -20,13 +36,13 @@ ang.controller("MainCtrl", function ($scope) {
                     ],
                 Links:
                     [
-                        { Name: "ל", Ico: "ל", Desc: "" },
-                        { Name: "ל", Ico: "ע", Desc: "" },
-                        { Name: "ל", Ico: "x", Desc: "" },
+                        { Name: "הארץ", Ico: "http://upload.wikimedia.org/wikipedia/he/3/3f/Arutz_7.png", Desc: "נלקח מהארץ", Url: "" },
+                        { Name: "ערוץ 10", Ico: "http://upload.wikimedia.org/wikipedia/he/2/28/%D7%9C%D7%95%D7%92%D7%95_%D7%97%D7%93%D7%A9%D7%95%D7%AA_10_%D7%94%D7%97%D7%93%D7%A9.png", Desc: "10נלקח מ", Url: "" },
+                        { Name: "רשת ב", Ico: "http://upload.wikimedia.org/wikipedia/he/3/31/ReshetBetLogo.jpg", Desc: "נלקח מרשת ב", Url: "" },
                     ]
 
             },
-           
+
             OtherDates: [
             {
                 DateItem: {
@@ -36,6 +52,13 @@ ang.controller("MainCtrl", function ($scope) {
                             { Name: "ל", Val: 222 },
                             { Name: "ע", Val: 3 },
                             { Name: "x", Val: 33 },
+                        ]
+                    ,
+                    Links:
+                        [
+                            { Name: "ערוץ 7", Ico: "http://upload.wikimedia.org/wikipedia/he/3/3f/Arutz_7.png", Desc: "ערוץ 7", Url: "" },
+                            { Name: "מעריב", Ico: "http://upload.wikimedia.org/wikipedia/he/c/ce/Maariv.svg", Desc: "נלקח מעריב", Url: "" },
+                            { Name: "רשת ב", Ico: "http://upload.wikimedia.org/wikipedia/he/3/31/ReshetBetLogo.jpg", Desc: "נלקח מרשת ב", Url: "" },
                         ]
                 },
             },
@@ -48,6 +71,13 @@ ang.controller("MainCtrl", function ($scope) {
                                     { Name: "ע", Val: 3 },
                                     { Name: "x", Val: 22 },
                                 ]
+                    ,
+                    Links:
+                        [
+                            { Name: "הארץ", Ico: "http://upload.wikimedia.org/wikipedia/he/3/3f/Arutz_7.png", Desc: "נלקח מהארץ", Url: "" },
+
+                            { Name: "WALLA", Ico: "http://upload.wikimedia.org/wikipedia/he/d/d5/Walla_logo.svg", Desc: "נלקח מ WALLA", Url: "" },
+                           ]
                 },
             },
             {
@@ -58,7 +88,11 @@ ang.controller("MainCtrl", function ($scope) {
                                     { Name: "ל", Val: 1 },
                                     { Name: "ע", Val: 32 },
                                     { Name: "x", Val: 223 },
-                                ]
+                                ],
+                    Links:
+                        [
+                            { Name: "ערוץ 10", Ico: "ל", Desc: "נלקח מערץ 10", Url: "" },
+                          ]
                 },
             }
             ],
@@ -76,7 +110,7 @@ ang.controller("MainCtrl", function ($scope) {
 
     $scope.otherDatePick = function (s) {
         changeChartObject(s.DateItem);
-        $scope.Survery.SelectedDate = s.DateItem.Title;
+      
         refresh();
     };
 
@@ -95,6 +129,8 @@ ang.controller("MainCtrl", function ($scope) {
     };
 
     function changeChartObject(dateItem) {
+        $scope.Survery.SelectedSurvery.SelectedDate =dateItem.Title;
+        $scope.Survery.SelectedSurvery.Links = dateItem.Links;
         $scope.chartObject.options.title = dateItem.Title;
         $scope.chartObject.data.rows = [];
         for (row in dateItem.Items) {
@@ -122,7 +158,6 @@ ang.controller("MainCtrl", function ($scope) {
     }
 
     function refresh() {
-
         $scope.chart = $scope.chartObject;
     }
 
