@@ -120,8 +120,17 @@
   <data name="AppName" xml:space="preserve">
     <value>בחירות בישראל</value>
   </data>
+  <data name="Contact" xml:space="preserve">
+    <value>צור קשר</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>סיקור כל סקרים בחירות 2015</value>
+  </data>
   <data name="HomePage" xml:space="preserve">
     <value>דף הבית</value>
+  </data>
+  <data name="Keywords" xml:space="preserve">
+    <value>בחירות 2015 , סקרים</value>
   </data>
   <data name="Support" xml:space="preserve">
     <value>תמיכה</value>

@@ -4,17 +4,18 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    <meta name="description" content="בחירות בישראל" />
+    <title>@Resources.Resource.Title</title>
+    <meta name="description" content="@Resources.Resource.Description" />
+    <meta name="keywords" content="@Resources.Resource.Keywords" />
 
     @Styles.Render("~/bundles/css" + (CultureHelper.IsRighToLeft() ? "-rtl" : ""))
     @Scripts.Render("~/bundles/modernizr")
-    @Scripts.Render("~/bundles/jquery") 
+    @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap" + (CultureHelper.IsRighToLeft() ? "-rtl" : ""))
-  
+
     @Scripts.Render("~/bundles/angular")
 </head>
-<body ng-app="google-chart-example" ng-controller="MainCtrl">
+<body ng-app="vote" ng-controller="MainCtrl">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -27,25 +28,25 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink(@Resources.Resource.Contact, "Contact", "Home")</li>
 
                     <li class="dropdown" dropdown on-toggle="toggled(open)">
                         <a href class="dropdown-toggle" role="button" dropdown-toggle>
-                            {{Survery.Current.Name}}<span class="caret"></span>
+                            {{Survery.Current.Title}}<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
                             <li ng-repeat="survery in Survery.AllItems">
-                                <a href="" ng-click="changeSurvery(survery)">{{survery.Name}}</a>
+                                <a href="#" ng-click="changeSurvery(survery)">{{survery.Name}}</a>
                             </li>
                         </ul>
                     </li>
                     <li class="dropdown" dropdown on-toggle="toggled(open)">
                         <a href class="dropdown-toggle" role="button" dropdown-toggle>
-                            תאריך אחרון<span class="caret"></span>
+                            {{Survery.Current.LastDate}}<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li ng-repeat="choice in items">
-                                <a href>{{choice}}</a>
+                            <li ng-repeat="choiceDate in Survery.Current.OtherDates">
+                                <a href="#" ng-click="otherDatePick(choiceDate)">{{choiceDate}}</a>
                             </li>
                         </ul>
                     </li>
@@ -80,7 +81,7 @@
     </script>
 
     <script>
-        var ang = angular.module('google-chart-example', ['googlechart', 'ui.bootstrap']);
+        var ang = angular.module('vote', ['googlechart', 'ui.bootstrap']);
 
     </script>
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -72,6 +73,18 @@ namespace voteweb.Helper
             if (!name.Contains("-")) return name;
 
             return name.Split('-')[0]; // Read first part only. E.g. "en", "es"
+        }
+
+        private static string GetResxNameByValue(string filename,string value,Type type)
+        {
+            System.Resources.ResourceManager rm = new System.Resources.ResourceManager(filename, type.Assembly);
+            var entry = rm.GetResourceSet(Thread.CurrentThread.CurrentCulture, true, true)
+                  .OfType<DictionaryEntry>()
+                  .FirstOrDefault(e => e.Value.ToString() == value);
+
+            var key = entry.Key.ToString();
+            return key;
+
         }
     }
 }

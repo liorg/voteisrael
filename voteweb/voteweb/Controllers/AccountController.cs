@@ -18,6 +18,8 @@ namespace ASP.NET_MVC5_Bootstrap3_3_1_LESS.Controllers
         public AccountController()
             : this(new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext())))
         {
+            //System.Resources.ResourceManager rm = new System.Resources.ResourceManager("YourNamespace.YourResxFileName", this.GetType().Assembly);
+
         }
 
         public AccountController(UserManager<ApplicationUser> userManager)

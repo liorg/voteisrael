@@ -120,8 +120,17 @@
   <data name="AppName" xml:space="preserve">
     <value>Israeli election</value>
   </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Israeli election 2015</value>
+  </data>
   <data name="HomePage" xml:space="preserve">
     <value>Home</value>
+  </data>
+  <data name="Keywords" xml:space="preserve">
+    <value>Israeli election 2015,Israeli election,surverys</value>
   </data>
   <data name="Support" xml:space="preserve">
     <value>Support</value>

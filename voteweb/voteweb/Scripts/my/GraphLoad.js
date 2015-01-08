@@ -1,30 +1,30 @@
 ﻿
 ang.controller("MainCtrl", function ($scope) {
-
-
-    $scope.Survery = {
+   $scope.Survery = {
         Current: {
-            Id: 1,
-            Name: "דחף"
+            Id: '{E7BE131D-321F-4F84-A4D2-709C5C65E421}',
+            Name: "דחף",
+            Title: "דחף",
+            LastDate: '2011-2-22',
+            OtherDates: [
+             '2011-1-1',
+             '2010-1-1',
+             '2009-1-1'
+            ],
         },
         AllItems: [
             { Id: 2, Name: "מינה צמח" },
             { Id: 3, Name: "גיאוקרטוגרפיה" },
             { Id: 4, Name: "מאגר מוחות" }
         ]
-
     };
     $scope.changeSurvery = function (s)
     {
-        alert(1);
         alert(s.Id)
     };
-
-    $scope.items = [
-    'The first choice!',
-    'And another choice for you.',
-    'but wait! A third!'
-    ];
+    $scope.otherDatePick = function (s) {
+        alert(s); 
+    };
 
     $scope.status = {
         isopen: false
@@ -39,8 +39,10 @@ ang.controller("MainCtrl", function ($scope) {
         $event.stopPropagation();
         $scope.status.isopen = !$scope.status.isopen;
     };
+
     $scope.chartObject = {};
     var style = "padding:0;height:400px";
+
     $scope.onions = [
         { v: "Onions" }, { v: 3 }
     ];
