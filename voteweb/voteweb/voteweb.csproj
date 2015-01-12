@@ -237,6 +237,9 @@
     <Compile Include="VM\VoteViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\countdown\demo.css" />
+    <Content Include="Content\countdown\pattern.png" />
+    <Content Include="Content\countdown\sample.jpg" />
     <Content Include="Content\css\bootstrap-rtl.css" />
     <Content Include="Content\fontsrtl\glyphicons-halflings-regular.svg" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
@@ -390,6 +393,9 @@
     <Content Include="Scripts\button.js" />
     <Content Include="Scripts\carousel-rtl.js" />
     <Content Include="Scripts\collapse.js" />
+    <Content Include="Scripts\countdown\jquery.final-countdown.js" />
+    <Content Include="Scripts\countdown\jquery.final-countdown.min.js" />
+    <Content Include="Scripts\countdown\kinetic.js" />
     <Content Include="Scripts\dropdown.js" />
     <Content Include="Scripts\Graph\ng-google-chart.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />

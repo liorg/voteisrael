@@ -22,7 +22,8 @@
 
 
     @Scripts.Render("~/bundles/angular")
-   
+    <link href="http://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet" type="text/css">
+    <link href="~/Content/countdown/demo.css" rel="stylesheet" />
     <link href="~/Content/sharing/Sharing.css"rel="stylesheet" />
 
     
@@ -94,6 +95,18 @@
     <script>
         var ang = angular.module('vote', ['googlechart', 'ui.bootstrap']);
     </script>
+    <script src="~/Scripts/countdown/kinetic.js"></script>
+
+    <script src="~/Scripts/countdown/jquery.final-countdown.min.js"></script>
+    <script type="text/javascript">
+	$('.countdown').final_countdown({
+        'start': 1362139200,
+        'end': 1388461320,
+        'now': 1387461319
+    });
+    </script>
+
+
     @Scripts.Render("~/bundles/my")
 </body>
 
