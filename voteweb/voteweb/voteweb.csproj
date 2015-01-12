@@ -240,6 +240,7 @@
     <Content Include="Content\countdown\demo.css" />
     <Content Include="Content\countdown\pattern.png" />
     <Content Include="Content\countdown\sample.jpg" />
+    <Content Include="Content\countdown\telaviv.jpg" />
     <Content Include="Content\css\bootstrap-rtl.css" />
     <Content Include="Content\fontsrtl\glyphicons-halflings-regular.svg" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
