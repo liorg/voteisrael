@@ -136,7 +136,7 @@ ang.controller("MainCtrl", function ($scope) {
             $scope.chartObject.data.rows.push({
                 c: [
                    { v: dateItem.Items[row].Name },
-                   { v: dateItem.Items[row].Val }
+                   { v: dateItem.Items[row].Val}
                 ]
             })
         }
@@ -147,8 +147,8 @@ ang.controller("MainCtrl", function ($scope) {
         $scope.chartObject.options = { 'title': '' };
         $scope.chartObject.data = {
             "cols": [
-                { id: "t", label: "Topping", type: "string" },
-                { id: "s", label: "קולות", type: "number" }
+                { id: "t", label: "Topping", type: "string"   },
+                { id: "s", label: "מספר קולות", type: "number" }
             ],
             "rows": []
         };
