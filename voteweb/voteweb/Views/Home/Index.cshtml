@@ -2,10 +2,10 @@
     ViewBag.Title = "Home Page";
 }
 <div class="jumbotron bgssx">
-    @*<div class="row">
-            <h2>@Resources.Resource.Title</h2>
-        </div>*@
-    <div class="countdown countdown-container container"> 
+    <div class="row">
+        <h2 class="text-title">@Resources.Resource.Title</h2>
+    </div>
+    <div class="countdown countdown-container container">
         <div class="clock row">
             <div class="clock-item clock-days countdown-time-value col-xs-6 col-sm-3 col-md-3">
                 <div class="wrap">
@@ -54,7 +54,8 @@
         </div><!-- /.clock -->
     </div><!-- /.countdown-wrapper -->
 
-    <div class="row"><p></p>
+    <div class="row">
+        <p></p>
         <div google-chart chart="chart" style="{{chart.cssStyle}}" />
     </div>
 

@@ -459,7 +459,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\bootstrap\countdown\" />
     <Folder Include="Dal\" />
   </ItemGroup>
   <ItemGroup>

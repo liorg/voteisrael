@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AppName" xml:space="preserve">
-    <value>Israeli election</value>
+    <value>Elections in Israel 2015</value>
   </data>
   <data name="Contact" xml:space="preserve">
     <value>Contact</value>
@@ -127,7 +127,7 @@
     <value>Please ,Write comment to my email</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>Israeli election 2015</value>
+    <value>Israeli elections  2015</value>
   </data>
   <data name="HomePage" xml:space="preserve">
     <value>Home</value>
@@ -145,6 +145,6 @@
     <value>Support</value>
   </data>
   <data name="Title" xml:space="preserve">
-    <value>Israeli election 2015</value>
+    <value>Elections in Israel 2015 in..</value>
   </data>
 </root>

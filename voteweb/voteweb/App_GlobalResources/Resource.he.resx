@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AppName" xml:space="preserve">
-    <value>בחירות בישראל</value>
+    <value>בחירות  2015 בישראל</value>
   </data>
   <data name="Contact" xml:space="preserve">
     <value>צור קשר</value>
   </data>
   <data name="ContactDesc" xml:space="preserve">
-    <value>לתגובות נא לרשום אליי </value>
+    <value>לתגובות ניתן לשלול למייל זה</value>
   </data>
   <data name="Description" xml:space="preserve">
     <value>סיקור כל סקרים בחירות 2015</value>
@@ -145,6 +145,6 @@
     <value>תמיכה</value>
   </data>
   <data name="Title" xml:space="preserve">
-    <value>בחירות 2015</value>
+    <value>בחירות 2015 בעוד...</value>
   </data>
 </root>

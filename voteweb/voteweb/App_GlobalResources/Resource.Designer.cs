@@ -61,7 +61,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Israeli election.
+        ///   Looks up a localized string similar to Elections in Israel 2015.
         /// </summary>
         internal static string AppName {
             get {
@@ -88,7 +88,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Israeli election 2015.
+        ///   Looks up a localized string similar to Israeli elections  2015.
         /// </summary>
         internal static string Description {
             get {
@@ -142,7 +142,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Israeli election 2015.
+        ///   Looks up a localized string similar to Elections in Israel 2015 in...
         /// </summary>
         internal static string Title {
             get {
