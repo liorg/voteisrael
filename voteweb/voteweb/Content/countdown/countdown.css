@@ -73,8 +73,8 @@
 
 @media (max-width: 767px) {
     .clock-item {
-        margin: 0px 10px 0px 0px;
-        width: 100px;padding:0px;
+        margin: 0px 5px 5px 0px;
+        width: 100px;padding:5px;
     }
 
     .text {
