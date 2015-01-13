@@ -1,5 +1,5 @@
 ﻿
-ang.controller("MainCtrl", function ($scope) {
+ang.controller("MainCtrl", function ($scope, $window) {
     $scope.chartObject = {};
 
     var style = "padding:2px;height:400px";
@@ -15,12 +15,14 @@ ang.controller("MainCtrl", function ($scope) {
         { Name: "Bet", Url: "http://upload.wikimedia.org/wikipedia/he/3/31/ReshetBetLogo.jpg" }
 
     ];
+    var w = angular.element($window);
+    var maxWidth = 720;//320;
 
     $scope.Survery = {
-        SelectedSurvery:{
+        SelectedSurvery: {
             SelectedDate: "d",
-            Links:[],
-            Remarks:[]
+            Links: [],
+            Remarks: []
         },
         Current: {
             Id: '{E7BE131D-321F-4F84-A4D2-709C5C65E421}',
@@ -77,7 +79,7 @@ ang.controller("MainCtrl", function ($scope) {
                             { Name: "הארץ", Ico: "http://upload.wikimedia.org/wikipedia/he/9/92/Haaretz.svg", Desc: "נלקח מהארץ", Url: "" },
 
                             { Name: "WALLA", Ico: "http://upload.wikimedia.org/wikipedia/he/d/d5/Walla_logo.svg", Desc: "נלקח מ WALLA", Url: "" },
-                           ]
+                        ]
                 },
             },
             {
@@ -92,7 +94,7 @@ ang.controller("MainCtrl", function ($scope) {
                     Links:
                         [
                             { Name: "ערוץ 10", Ico: "ל", Desc: "נלקח מערץ 10", Url: "" },
-                          ]
+                        ]
                 },
             }
             ],
@@ -128,7 +130,7 @@ ang.controller("MainCtrl", function ($scope) {
     };
 
     function changeChartObject(dateItem) {
-        $scope.Survery.SelectedSurvery.SelectedDate =dateItem.Title;
+        $scope.Survery.SelectedSurvery.SelectedDate = dateItem.Title;
         $scope.Survery.SelectedSurvery.Links = dateItem.Links;
         $scope.chartObject.options.title = dateItem.Title;
         $scope.chartObject.data.rows = [];
@@ -136,29 +138,55 @@ ang.controller("MainCtrl", function ($scope) {
             $scope.chartObject.data.rows.push({
                 c: [
                    { v: dateItem.Items[row].Name },
-                   { v: dateItem.Items[row].Val}
+                   { v: dateItem.Items[row].Val }
                 ]
             })
         }
     };
 
     function loadChartObject() {
-        $scope.chartObject.type = "ColumnChart";
+        if ($window.innerWidth < maxWidth) {
+            $scope.chartObject.type = "BarChart";
+
+        }
+        else {
+            $scope.chartObject.type = "ColumnChart";
+        }
         $scope.chartObject.options = { 'title': '' };
         $scope.chartObject.data = {
             "cols": [
-                { id: "t", label: "Topping", type: "string"   },
+                { id: "t", label: "Topping", type: "string" },
                 { id: "s", label: "מספר קולות", type: "number" }
             ],
             "rows": []
         };
         changeChartObject($scope.Survery.Current.LastDate);
-       
+
     }
 
     function refresh() {
-        $scope.chart = $scope.chartObject; $scope.chart.cssStyle = style;
+        $scope.chart = $scope.chartObject;
+        $scope.chart.cssStyle = style;
     }
+
+    w.bind('resize', function () {
+       
+        console.log( $window.innerWidth);
+
+        // $scope.chartObject.type = "ColumnChart";
+        if ($window.innerWidth < maxWidth && $scope.chartObject.type != "BarChart") {
+            $scope.chartObject.type = "BarChart";
+            refresh();
+        }
+        else if ($window.innerWidth >= maxWidth && $scope.chartObject.type != "ColumnChart") {
+            $scope.chartObject.type = "ColumnChart";
+            refresh();
+        }
+        // $scope.windowHeight = $window.innerHeight;
+        // $scope.windowWidth = $window.innerWidth;
+
+    });
+
 
     loadChartObject();
 
