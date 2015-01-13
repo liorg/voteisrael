@@ -3,15 +3,14 @@
 }
 <div class="jumbotron bgssx">
     @*<div class="row">
-        <h2>@Resources.Resource.Title</h2>
-    </div>*@
+            <h2>@Resources.Resource.Title</h2>
+        </div>*@
     <div class="countdown countdown-container container">
         <div class="clock row">
             <div class="clock-item clock-days countdown-time-value col-sm-6 col-md-3">
                 <div class="wrap">
                     <div class="inner">
                         <div id="canvas-days" class="clock-canvas"></div>
-
                         <div class="text">
                             <p class="val">0</p>
                             <p class="type-days type-time">DAYS</p>
@@ -19,12 +18,10 @@
                     </div><!-- /.inner -->
                 </div><!-- /.wrap -->
             </div><!-- /.clock-item -->
-
             <div class="clock-item clock-hours countdown-time-value col-sm-6 col-md-3">
                 <div class="wrap">
                     <div class="inner">
                         <div id="canvas-hours" class="clock-canvas"></div>
-
                         <div class="text">
                             <p class="val">0</p>
                             <p class="type-hours type-time">HOURS</p>
@@ -32,12 +29,10 @@
                     </div><!-- /.inner -->
                 </div><!-- /.wrap -->
             </div><!-- /.clock-item -->
-
             <div class="clock-item clock-minutes countdown-time-value col-sm-6 col-md-3">
                 <div class="wrap">
                     <div class="inner">
                         <div id="canvas-minutes" class="clock-canvas"></div>
-
                         <div class="text">
                             <p class="val">0</p>
                             <p class="type-minutes type-time">MINUTES</p>
@@ -45,12 +40,10 @@
                     </div><!-- /.inner -->
                 </div><!-- /.wrap -->
             </div><!-- /.clock-item -->
-
             <div class="clock-item clock-seconds countdown-time-value col-sm-6 col-md-3">
                 <div class="wrap">
                     <div class="inner">
                         <div id="canvas-seconds" class="clock-canvas"></div>
-
                         <div class="text">
                             <p class="val">0</p>
                             <p class="type-seconds type-time">SECONDS</p>
@@ -61,58 +54,52 @@
         </div><!-- /.clock -->
     </div><!-- /.countdown-wrapper -->
 
-    <p class="lead">
-        <div>
-            <div google-chart chart="chart" style="{{chart.cssStyle}}" />
-        </div>
+    <div class="row"><p></p>
+        <div google-chart chart="chart" style="{{chart.cssStyle}}" />
+    </div>
 
-
-</div>
-<div class="row">
-    <div class="col-md-6 col-xs-12">
-        <p></p><p></p>
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h3 class="panel-title">@Resources.Resource.Links</h3>
-            </div>
-            <div class="panel-body">
-                <div class="list-group">
-                    <div class="list-group-item" ng-repeat="link in Survery.SelectedSurvery.Links">
-                        <img src="{{link.Ico}}" width="40" height="40" />   <a href="#">{{link.Desc}}</a>
+    <div class="row">
+        <div class="col-md-6 col-xs-12">
+            <p></p><p></p>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">@Resources.Resource.Links</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="list-group">
+                        <div class="list-group-item" ng-repeat="link in Survery.SelectedSurvery.Links">
+                            <img src="{{link.Ico}}" width="40" height="40" />   <a href="#">{{link.Desc}}</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
-    </div>
-    <div class="col-md-6 col-xs-12">
-        <p></p><p></p>
-        <div class="panel  panel-danger">
-            <div class="panel-heading ">
-                <h3 class="panel-title">@Resources.Resource.Remarks</h3>
-            </div>
-            <div class="panel-body">
-                <div class="list-group">
-                    <a href="#" class="list-group-item">
-                        אחוז החסימה היום מעל 4 מנדטים <span class="glyphicon  glyphicon-thumbs-down"></span>
-                    </a>
-                    <a href="#" class="list-group-item">
-                        המפלגות הערביות מחוברות בניהן בחלק מהסקרים כי אין לי נתון לגביהם  <span class="glyphicon glyphicon-volume-off"></span>
-                    </a>
-                    <a href="#" class="list-group-item">
-                        לכו להצביע ,מי שמצביע משפיע <span class="glyphicon   glyphicon-hand-up"></span>
-                    </a>
-                    <a href="#" class="list-group-item">
-                        אן פרסומות וזהו אתר ללא מטרות רווח  <span class="glyphicon glyphicon-usd"></span>
-                    </a>
-                    <a href="#" class="list-group-item">
-                        אתר החדשות שהזמין את הסקר יוצג בכותרת של הגרף וכן בקישורים  <span class="glyphicon  glyphicon-eye-open"></span>
-                    </a>
+        <div class="col-md-6 col-xs-12">
+            <p></p><p></p>
+            <div class="panel  panel-danger">
+                <div class="panel-heading ">
+                    <h3 class="panel-title">@Resources.Resource.Remarks</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item">
+                            אחוז החסימה היום מעל 4 מנדטים <span class="glyphicon  glyphicon-thumbs-down"></span>
+                        </a>
+                        <a href="#" class="list-group-item">
+                            המפלגות הערביות מחוברות בניהן בחלק מהסקרים כי אין לי נתון לגביהם  <span class="glyphicon glyphicon-volume-off"></span>
+                        </a>
+                        <a href="#" class="list-group-item">
+                            לכו להצביע ,מי שמצביע משפיע <span class="glyphicon   glyphicon-hand-up"></span>
+                        </a>
+                        <a href="#" class="list-group-item">
+                            אן פרסומות וזהו אתר ללא מטרות רווח  <span class="glyphicon glyphicon-usd"></span>
+                        </a>
+                        <a href="#" class="list-group-item">
+                            אתר החדשות שהזמין את הסקר יוצג בכותרת של הגרף וכן בקישורים  <span class="glyphicon  glyphicon-eye-open"></span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
 </div>
-
-
