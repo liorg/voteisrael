@@ -237,7 +237,7 @@
     <Compile Include="VM\VoteViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\countdown\demo.css" />
+    <Content Include="Content\countdown\countdown.css" />
     <Content Include="Content\countdown\pattern.png" />
     <Content Include="Content\countdown\sample.jpg" />
     <Content Include="Content\countdown\telaviv.jpg" />

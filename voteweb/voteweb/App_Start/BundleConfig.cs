@@ -74,6 +74,12 @@ namespace ASP.NET_MVC5_Bootstrap3_3_1_LESS
             myBundle.Transforms.Add(jsTransformer);
             myBundle.Orderer = nullOrderer;
             bundles.Add(myBundle);
+
+            var cssMyBundle = new StyleBundle("~/bundles/mycss");
+            cssMyBundle.Include("~/Content/countdown/countdown.css", "~/Content/sharing/Sharing.css");
+            cssMyBundle.Transforms.Add(cssTransformer);
+            cssMyBundle.Orderer = nullOrderer;
+            bundles.Add(cssMyBundle);
         }
     }
 }

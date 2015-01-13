@@ -23,10 +23,11 @@
 
     @Scripts.Render("~/bundles/angular")
     <link href="http://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet" type="text/css">
-    <link href="~/Content/countdown/demo.css" rel="stylesheet" />
-    <link href="~/Content/sharing/Sharing.css"rel="stylesheet" />
+    @*<link href="~/Content/countdown/countdown.css" rel="stylesheet" />
+    <link href="~/Content/sharing/Sharing.css"rel="stylesheet" />*@
+@Styles.Render("~/bundles/mycss");
 
-    
+
 </head>
 <body ng-app="vote" ng-controller="MainCtrl">
     <div class="navbar navbar-inverse navbar-fixed-top">
