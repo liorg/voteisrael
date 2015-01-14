@@ -1,5 +1,5 @@
 ﻿
-ang.controller("MainCtrl", function ($scope, $window) {
+ang.controller("MainCtrl", function ($scope, $window,$modal, $log) {
     $scope.chartObject = {};
 
     var style = "padding:2px;height:400px";
@@ -106,6 +106,14 @@ ang.controller("MainCtrl", function ($scope, $window) {
         ]
     };
 
+    $scope.openContact = function () {
+       var modalInstance = $modal.open({
+            templateUrl: 'myContact.html',
+            controller: 'ModalInstanceCtrl'
+        });
+    };
+
+
     $scope.changeSurvery = function (s) {
         alert(s.Id)
     };
@@ -192,4 +200,11 @@ ang.controller("MainCtrl", function ($scope, $window) {
 
     refresh();
 
+});
+ang.controller('ModalInstanceCtrl', function ($scope, $modalInstance) {
+
+    $scope.close = function () {
+        $modalInstance.dismiss('cancel');
+    };
+   
 });

@@ -42,7 +42,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink(@Resources.Resource.Contact, "Contact", "Home")</li>
+                    <li>  <a href="#" ng-click="openContact()">@Resources.Resource.Contact</a></li>
 
                     <li class="dropdown" dropdown on-toggle="toggled(open)">
                         <a href class="dropdown-toggle" role="button" dropdown-toggle>
@@ -107,8 +107,26 @@
     });
     </script>
 
-
     @Scripts.Render("~/bundles/my")
+
+
+    <script type="text/ng-template" id="myContact.html">
+        <div class="modal-header">
+            <h3 class="modal-title">@Resources.Resource.ContactDesc</h3>
+
+        </div>
+        <div class="modal-body">
+            <address>
+                <strong>@Resources.Resource.Support :</strong>   <a href="mailto:israelelectionpolls@gmail.com">israelelectionpolls@gmail.com</a><br />
+                <a href="http://bhirot.tk">http://bhirot.tk</a>
+
+            </address>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="close()">Close</button>
+
+        </div>
+    </script>
 </body>
 
 </html>
